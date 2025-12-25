@@ -100,3 +100,7 @@ src/test/java
 ├── pages – Page Object classes
 
 └── tests – Automated test classes
+
+
+
+Test Cases:https://www.notion.so/QA-Test-Cases-2c7498cabf7d806a900fca98247a0da0?source=copy_link
