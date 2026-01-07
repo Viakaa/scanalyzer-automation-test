@@ -7,23 +7,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginPage {
-//  Temporary template of thepage
+public class RegistrationPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
+
     private By emailField = By.id("email");
     private By passwordField = By.id("password");
-    private By signInButton = By.xpath("//button[text()='Sign In']");
-    private By signUpButton = By.xpath("//button[contains(text(),'Sign up')]");
+    private By confirmPasswordField = By.id("confirmPassword");
+    private By signUpButton = By.xpath("//button[text()='Sign Up']");
 
-    public LoginPage(WebDriver driver) {
+    public RegistrationPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
-
-    public void open() {
-        driver.get("http://localhost:3000/");
     }
 
     public void enterEmail(String email) {
@@ -34,11 +30,11 @@ public class LoginPage {
         driver.findElement(passwordField).sendKeys(password);
     }
 
-    public void clickLogin() {
-        wait.until(ExpectedConditions.elementToBeClickable(signInButton)).click();
+    public void enterConfirmPassword(String password) {
+        driver.findElement(confirmPasswordField).sendKeys(password);
     }
 
-    public void clickSignUp() {
-        driver.findElement(signUpButton).click();
+    public void clickRegister() {
+        wait.until(ExpectedConditions.elementToBeClickable(signUpButton)).click();
     }
 }
