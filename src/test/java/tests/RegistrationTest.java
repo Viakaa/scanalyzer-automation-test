@@ -2,25 +2,30 @@ package tests;
 
 import base.BaseTest;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import scanalyzer_test.po.LoginPage;
-import scanalyzer_test.po.RegistrationPage;
+import scanalyzer_test.bo.RegistrationBO;
+import scanalyzer_test.db.RegistrationUserProvider;
 
+@Listeners({scanalyzer_test.listeners.CustomAllureListener.class, scanalyzer_test.listeners.CustomListener.class})
 public class RegistrationTest extends BaseTest {
 
-    @Test
-    public void registrationViaSignUpButton() {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open();
-        loginPage.clickSignUp();
+    private RegistrationBO registrationBO;
 
-        RegistrationPage registrationPage = new RegistrationPage(driver);
-        registrationPage.enterEmail("newuser@example.com");
-        registrationPage.enterPassword("Password123!");
-        registrationPage.enterConfirmPassword("Password123!");
-        registrationPage.clickRegister();
+    @Test(
+            dataProvider = "users",
+            dataProviderClass = RegistrationUserProvider.class
+    )
+    public void registrationViaSignUpButton(String name, String email, String password) {
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("/en"),
-                "After registration, user should be redirected to login page");
+        registrationBO = new RegistrationBO(driver);
+
+        registrationBO.openRegistrationFromLogin();
+        registrationBO.register(name, email, password);
+
+        Assert.assertTrue(
+                registrationBO.getCurrentUrl().contains("/en"),
+                "After registration, user should be redirected to login page"
+        );
     }
 }
