@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Objects;
 
 public class LoginPage {
     private WebDriver driver;
@@ -28,7 +29,8 @@ public class LoginPage {
     }
 
     public void enterEmail(String email) {
-        driver.findElement(emailField).sendKeys(email);
+        Objects.requireNonNull(wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email"))))
+                .sendKeys(email);
     }
 
     public void enterPassword(String password) {

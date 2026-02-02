@@ -11,7 +11,7 @@ public class RegistrationBO {
     private WebDriver driver;
     private LoginPage loginPage;
     private RegistrationPage registrationPage;
-    private static final Logger log = LoggerFactory.getLogger(LoginBO.class);
+    private static final Logger log = LoggerFactory.getLogger(RegistrationBO.class);
 
     public RegistrationBO(WebDriver driver) {
         this.driver = driver;

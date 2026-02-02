@@ -7,8 +7,8 @@ public class RegistrationUserProvider {
     @DataProvider(name = "users")
     public static Object[][] users() {
         return new Object[][]{
-                {"TestUser", "a@gmail.com", "TestPassword"},
-                {"TestUser2","b@gmail.com", "TestPassword112"}
+                {"TestUser", "e@gmail.com", "TestPassword"},
+                {"TestUser2","f@gmail.com", "TestPassword112"}
         };
     }
 }
