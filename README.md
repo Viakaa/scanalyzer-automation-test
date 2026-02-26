@@ -62,7 +62,11 @@ The purpose of this repository is to:
 ---
 
 Test strategy: https://docs.google.com/document/d/1f2UGBOk8efaOFYrL035yzzlZc7ZCoRZAXMB23Te6Nuo/edit?usp=sharing
+
 Test Scenarios: https://docs.google.com/document/d/1Lp3rV_Tn0jOkPopfvqihdNb-I-wEVH7LMtjUSKgJjSI/edit?usp=sharing
+
 Test Cases:https://www.notion.so/QA-Test-Cases-2c7498cabf7d806a900fca98247a0da0?source=copy_link
+
 Bug Reports: https://www.notion.so/Bug-Tracker-2e7498cabf7d80c69a07f759585d8c7b?source=copy_link
+
 https://qaprojectspace.atlassian.net/?continue=https%3A%2F%2Fqaprojectspace.atlassian.net%2Fwelcome%2Fsoftware%3FprojectId%3D10033&atlOrigin=eyJpIjoiN2Y3OTU2NmIwZjQ5NGRjNTkyOWI2N2RjYmM1ZWI3ODMiLCJwIjoiaiJ9
