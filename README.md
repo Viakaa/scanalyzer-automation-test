@@ -3,7 +3,7 @@
 This repository contains the QA automation strategy and initial automation setup
 for the AI-based warehouse inventory management platform.
 
-The repository focuses on demonstrating automation approach, framework structure,
+The repository focuses on demonstrating an automation approach, framework structure,
 and testing mindset, with the goal of achieving **full test coverage** across
 all critical features.
 
@@ -35,7 +35,6 @@ The purpose of this repository is to:
 
 ### In Scope (Planned for Automation)
 
-
 - Authentication:
   - User login (happy and negative paths)
   - User registration (happy path)
@@ -43,12 +42,6 @@ The purpose of this repository is to:
 - Main Dashboard:
   - Successful dashboard load after login
   - Visibility of core UI elements (menu, scan button)
-  - Inventory search functionality
-  
-These scenarios represent **critical smoke and regression paths** and will eventually
-be included in the full automated coverage.
-
-
 ---
 
 ### Out of Scope
@@ -56,21 +49,6 @@ be included in the full automated coverage.
 - AI image and video scanning functionality  
   (covered by manual testing due to instability of UI automation for AI features)
 - Security testing
-- Backend / API testing
-
----
-
-## Automation Strategy
-
-
-Automation is focused on:
-
-- Smoke and regression scenarios
-- User behavior validation rather than implementation details
-- Maintainable and scalable framework design
-
-Detailed automation strategy is described directly in this repository.
-
 ---
 
 ## Tools and Technologies
@@ -83,25 +61,8 @@ Detailed automation strategy is described directly in this repository.
 
 ---
 
-## Project Status
-
-- Manual test cases and documentation: **Completed (maintained in Notion)**
-- Automation framework setup: **In progress**
-- Automated test implementation: **Planned**
-- Goal: **Full test coverage** for all key features
-- 
----
-
-## Repository Structure
-src/test/java
-
-├── base – Base test setup
-
-├── pages – Page Object classes
-
-└── tests – Automated test classes
-
-
-
+Test strategy: https://docs.google.com/document/d/1f2UGBOk8efaOFYrL035yzzlZc7ZCoRZAXMB23Te6Nuo/edit?usp=sharing
+Test Scenarios: https://docs.google.com/document/d/1Lp3rV_Tn0jOkPopfvqihdNb-I-wEVH7LMtjUSKgJjSI/edit?usp=sharing
 Test Cases:https://www.notion.so/QA-Test-Cases-2c7498cabf7d806a900fca98247a0da0?source=copy_link
 Bug Reports: https://www.notion.so/Bug-Tracker-2e7498cabf7d80c69a07f759585d8c7b?source=copy_link
+https://qaprojectspace.atlassian.net/?continue=https%3A%2F%2Fqaprojectspace.atlassian.net%2Fwelcome%2Fsoftware%3FprojectId%3D10033&atlOrigin=eyJpIjoiN2Y3OTU2NmIwZjQ5NGRjNTkyOWI2N2RjYmM1ZWI3ODMiLCJwIjoiaiJ9
