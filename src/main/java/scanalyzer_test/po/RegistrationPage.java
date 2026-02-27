@@ -7,7 +7,7 @@
 
     import java.time.Duration;
 
-    public class RegistrationPage {
+    public class RegistrationPage extends BasePage{
         private WebDriver driver;
         private WebDriverWait wait;
 
@@ -16,29 +16,33 @@
         private By passwordField = By.id("password");
         private By confirmPasswordField = By.id("confirmPassword");
         private By signUpButton = By.xpath("//button[text()='Sign Up']");
+        private By errorMessage = By.xpath("//div[contains(text(),'Password must be at least 6 characters long')]");
 
         public RegistrationPage(WebDriver driver) {
-            this.driver = driver;
-            this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            super(driver);
         }
 
         public void enterName(String name) {
-            wait.until(ExpectedConditions.elementToBeClickable(nameField)).sendKeys(name);
+            find(nameField).sendKeys(name);
         }
 
         public void enterEmail(String email) {
-            driver.findElement(emailField).sendKeys(email);
+            find(emailField).sendKeys(email);
         }
 
         public void enterPassword(String password) {
-            driver.findElement(passwordField).sendKeys(password);
+            find(passwordField).sendKeys(password);
         }
 
         public void enterConfirmPassword(String password) {
-            driver.findElement(confirmPasswordField).sendKeys(password);
+            find(confirmPasswordField).sendKeys(password);
         }
 
         public void clickRegister() {
-            wait.until(ExpectedConditions.elementToBeClickable(signUpButton)).click();
+            click(signUpButton);
+        }
+
+        public boolean isErrorDisplayed() {
+            return isVisible(errorMessage);
         }
     }

@@ -10,7 +10,7 @@ public class RegistrationBO {
 
     private WebDriver driver;
     private LoginPage loginPage;
-    private RegistrationPage registrationPage;
+    private final RegistrationPage registrationPage;
     private static final Logger log = LoggerFactory.getLogger(RegistrationBO.class);
 
     public RegistrationBO(WebDriver driver) {
@@ -36,5 +36,9 @@ public class RegistrationBO {
 
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
+    }
+
+    public boolean isRegistrationFailed() {
+        return registrationPage.isErrorDisplayed();
     }
 }

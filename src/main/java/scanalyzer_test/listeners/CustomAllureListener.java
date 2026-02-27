@@ -28,10 +28,14 @@ public class CustomAllureListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         log.error("Test FAILURE: {}", result.getName(), result.getThrowable());
-        attachScreenshot();
-        attachPageSource();
-        attachBrowserLogs();
-        attachCurrentUrl();
+        if (driver != null) {
+            attachScreenshot();
+            attachPageSource();
+            attachBrowserLogs();
+            attachCurrentUrl();
+        } else {
+            log.warn("Driver is null. Skipping browser-related Allure attachments.");
+        }
         attachTestParameters(result);
     }
 

@@ -41,4 +41,18 @@ public class LoginTest extends BaseTest {
                 "User should be redirected to login page after logout"
         );
     }
+
+    @Test
+    public void loginWithInvalidCredentials() {
+
+        loginBO = new LoginBO(driver);
+
+        loginBO.openLoginPage();
+        loginBO.login("email@gmail.com", "password");
+
+        Assert.assertTrue(
+                loginBO.isLoginFailed(),
+                "Error message should be displayed"
+        );
+    }
 }

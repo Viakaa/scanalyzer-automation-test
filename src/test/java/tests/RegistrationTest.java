@@ -16,7 +16,7 @@ public class RegistrationTest extends BaseTest {
             dataProvider = "users",
             dataProviderClass = RegistrationUserProvider.class
     )
-    public void registrationViaSignUpButton(String name, String email, String password) {
+    public void registrationWithValidCredentials(String name, String email, String password) {
 
         registrationBO = new RegistrationBO(driver);
 
@@ -26,6 +26,23 @@ public class RegistrationTest extends BaseTest {
         Assert.assertTrue(
                 registrationBO.getCurrentUrl().contains("/en"),
                 "After registration, user should be redirected to login page"
+        );
+    }
+
+    @Test(
+            dataProvider = "users",
+            dataProviderClass = RegistrationUserProvider.class
+    )
+    public void registrationWithInvalidCredentials(String name, String email, String password) {
+
+        registrationBO = new RegistrationBO(driver);
+
+        registrationBO.openRegistrationFromLogin();
+        registrationBO.register(name, email, "123");
+
+        Assert.assertTrue(
+                registrationBO.isRegistrationFailed(),
+                "Error message should be displayed"
         );
     }
 }

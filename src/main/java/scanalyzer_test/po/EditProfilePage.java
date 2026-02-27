@@ -23,7 +23,7 @@ public class EditProfilePage {
     }
 
     public void open() {
-        driver.get("https://scanalyzer-warehouse.vercel.app/en/profile");
+        driver.get("http://localhost:3000/en/profile");
     }
 
     public void clickEditProfile() {
